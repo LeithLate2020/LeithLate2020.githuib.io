@@ -32,7 +32,7 @@ var data = {
                 "type" : "Point", 
                 "coordinates" : [
                     280,
-                    692
+                    500
                 ] 
             }
         }
