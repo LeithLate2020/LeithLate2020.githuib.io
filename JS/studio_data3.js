@@ -31,8 +31,8 @@ var data = {
             "geometry" : { 
                 "type" : "Point", 
                 "coordinates" : [
-                    280,
-                    500
+                    250,
+                    450
                 ] 
             }
         }
