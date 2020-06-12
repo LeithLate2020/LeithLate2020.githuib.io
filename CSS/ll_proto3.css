@@ -1,0 +1,73 @@
+body {
+  font-family: "Arial", Arial, serif;
+}
+
+#mapid {
+  //width: 70%;
+  width: 777px;
+  height: 930px;
+  float: left;
+}
+
+.sidebar {
+  //width: 300px;
+  height: 930px;
+  //position: absolute;
+  //right: 0;
+  background-color: lightgray;
+  font-family: "Arial", Arial, serif;
+  padding: 0px;
+  margin-left: 777px;
+}
+
+.name {
+    padding: 10px;
+}
+
+.text {
+    padding: 10px;
+}
+
+.media {
+    padding: 10px;
+}
+
+.artists {
+    padding: 10px;
+}
+
+.toggle{
+  display:inline-block;
+  height:30px;
+  width:30px;  
+  background:url("../Images/plus-sign_reduced.png");
+  vertical-align: middle;
+  float: left;
+}
+.toggle.expanded{
+  background:url("../Images/minus-sign_reduced.png");
+}
+
+img.artist {
+  float: left;
+  width: 100px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.artist_name {
+  display: inline-block;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.content {
+  font-size: 14px;
+}
+
+audio { 
+  height: 25px;
+  width: 250px;
+  padding-top: 10px;
+  //padding-left: 10px;
+}

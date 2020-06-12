@@ -1,0 +1,34 @@
+body {
+  font-family: "Arial", Arial, serif;
+}
+
+#mapid {
+  //width: 70%;
+  width: 777px;
+  height: 930px;
+  float: left;
+}
+
+.sidebar {
+  //width: 300px;
+  height: 930px;
+  //position: absolute;
+  //right: 0;
+  background-color: lightgray;
+  font-family: "Arial", Arial, serif;
+  padding: 0px;
+  margin-left: 777px;
+}
+
+.name {
+    padding: 10px;
+}
+
+.text {
+    padding: 10px;
+}
+
+.media {
+    padding: 10px;
+}
+
