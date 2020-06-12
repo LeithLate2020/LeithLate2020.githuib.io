@@ -8,7 +8,7 @@ var data = {
             "properties" : {  
                 "name" : "Out of the Blue", 
                 "text" : "<p><b>A short film about everything that the Leith School of Art has to offer. Produced by Peter Keith Films.</b></p>",
-                "media" : "<iframe src=\"https://www.youtube.com/embed/aCv9zGIXdEY\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                "media" : "<iframe src=\"https://www.youtube.com/embed/aCv9zGIXdEY\" width=\"200px\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
                 "artists" : "<p>Artists</p><div class=\"artist_name\">Allan Ramsay</div><div class=\"toggle\"></div><div class=\"content\"><img src=\"Images/ar.jpg\" class=\"artist\">Allan Ramsay was born in Edinburgh, Scotland, the eldest son of Allan Ramsay, poet and author of The Gentle Shepherd. From the age of twenty he studied in London under the Swedish painter Hans Hysing, and at the St. Martin's Lane Academy; leaving in 1736 for Rome and Naples, where he worked for three years under Francesco Solimena and Imperiali (Francesco Fernandi). <a href=\"https://en.wikipedia.org/wiki/Allan_Ramsay_(artist)\">Wikipedia entry</a></div>"
             }, 
             "geometry" : { 
