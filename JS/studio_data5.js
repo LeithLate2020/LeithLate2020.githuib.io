@@ -9,7 +9,7 @@ var data = {
                 "name" : "Out of the Blue", 
                 "text" : "<p><b>A short film about everything that the Leith School of Art has to offer. Produced by Peter Keith Films.</b></p>",
                 "media" : "<iframe src=\"https://www.youtube.com/embed/aCv9zGIXdEY\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
-                "artists" : "<p>Artists</p><div class=\"artist_name\"><a href=\"https://www.leithlate.co.uk/eddie1-gallery\">Allan Ramsay</a></div>"
+                "artists" : "<p>Artists</p><div class=\"artist_name\"><a target=\"_parent\" href=\"https://www.leithlate.co.uk/eddie1-gallery\">Allan Ramsay</a></div>"
             }, 
             "geometry" : { 
                 "type" : "Point", 
