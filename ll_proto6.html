@@ -71,9 +71,11 @@
     <div class="artist_balloons"></div>  
 
         <div class="sidebar">
+          <!--
           <div class="name"></div>
           <div class="text"></div>
           <div class="media"></div>
+        -->
           <div class="artists"></div>
       </div>
 
@@ -84,8 +86,11 @@
   <script>
 
     var map = L.map('mapid', {
-        maxZoom: 2,
+        //maxZoom: 2,
         crs: L.CRS.Simple,
+        zoomControl: false,
+         scrollWheelZoom: false,
+attributionControl: false
     });
 
     var bounds = [[0,0], [558,462]];
@@ -193,7 +198,7 @@ artists_array = Object.values(json_data);
 
     function populate_sidebar(j){
         $(".artists").html(artists_array[j])
-        
+
            $("#malihu3").mThumbnailScroller({
           type:"click-50",
           theme:"buttons-in"
