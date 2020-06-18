@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>LeithLate studio art prototype</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+  <link rel="stylesheet" href="CSS/jquery.mThumbnailScroller.css">  
+  <link rel="stylesheet" href="CSS/ll_proto6.css" />
+
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="JS/jquery.mThumbnailScroller.js"></script>
+  <script src="JS/studio_data6.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+
+<div class="jumbotron text-center">
+  <div class="logo_container">
+      <div class="logo_left"><img src="Images/LeithLate+Logo.jpg"></div>
+
+  <div class="logo_text"><h2>Virtual Studio Tour</h2></div>
+  <div class="logo_right"><img src="Images/edinburgh-culture-map.png"></div>
+  </div>
+</div>
+
+<!--
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+-->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+  
+    <div class="intro"><p>Facing the challenges that the lockdown period was posing to the cultural sector in Edinburgh and the world, we decided to explore how a digital platform could provide a new form of interaction with the public. Here you can find 10 volunteer artists belonging to 6 studios who decided to participate and share their private spaces where they develop their work. This and much more can be found by interacting with the studios located on the map and exploring the different artists that will appear at the right of the map.</p></div>
+
+
+
+
+    <div class="custom-popup" id="mapid"></div>
+      
+    <div class="artist_balloons"></div>  
+
+        <div class="sidebar">
+          <div class="name"></div>
+          <div class="text"></div>
+          <div class="media"></div>
+          <div class="artists"></div>
+      </div>
+
+
+
+
+
+  <script>
+
+    var map = L.map('mapid', {
+        maxZoom: 2,
+        crs: L.CRS.Simple,
+    });
+
+    var bounds = [[0,0], [558,462]];
+    var image = L.imageOverlay('Images/webmap2.jpg', bounds).addTo(map);
+
+    map.fitBounds(bounds);
+    map.setMaxBounds(bounds);
+    map.on('drag', function() {
+        map.panInsideBounds(bounds, { animate: false });
+    });
+
+
+    var markers = L.geoJSON(data, {
+
+        onEachFeature: onEachFeature,
+
+        pointToLayer: function (feature, latlng) {
+          //if ((feature.properties.name == "Studio 1") || (feature.properties.name == "Studio 2"))
+          //{ 
+          return L.circleMarker(latlng, {
+            fillColor: "gray",
+            color: "black",
+            weight: 2,
+            opacity: 0,
+            fillOpacity: 0,
+            radius: 20.0
+          });
+        //}
+      }
+
+    }).addTo(map);
+
+    var prevLayerClicked = null;
+
+    var artists_array = [];
+
+    function onEachFeature(feature, layer) {
+       
+      //layer.bindPopup(feature.properties.artists);
+
+        layer.on('click', function(e) {
+              if (prevLayerClicked !== null) {
+                  prevLayerClicked.setStyle({
+            fillColor: "gray",
+            color: "black",
+            weight: 2,
+            opacity: 0,
+            fillOpacity: 0,
+            radius: 20.0
+                  });
+              }
+ 
+
+
+        $(".footer").html(feature.properties.studio_text);
+        $(".artist_balloons").html(feature.properties.artists);
+
+
+        var json_data = feature.properties.artist_info;
+
+        //var json_data = JSON.parse(feature.properties.artist_info);
+
+//const arr = Object.keys(json_data).map((key) => [key, json_data[key]]);
+
+//console.log(arr);
+
+//var valuesOnly = Object.values(json_data);
+
+//console.log(valuesOnly);
+
+artists_array = Object.values(json_data);
+
+//console.log(artists_array);
+
+
+        //var result = [];
+        //var keys = Object.keys(json_data);
+        //keys.forEach(function(key){
+        //  artists_array.push(json+data[key]);
+        //});
+
+        //for(var i in Object.values(json_data))
+          //artists_array.push([i, json_data [i]]);
+
+        //  artists_array.push(i);
+
+        //$(".artists").html(result[j]);
+
+        var layer = e.target;
+
+        layer.setStyle({
+            fillColor: "#ff7800",
+            color: "#000",
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.8,
+            radius: 10.0
+                });
+                prevLayerClicked = layer;
+        });
+    }
+
+
+
+
+    function populate_sidebar(j){
+        $(".artists").html(artists_array[j])
+        
+           $("#malihu3").mThumbnailScroller({
+          type:"click-50",
+          theme:"buttons-in"
+        });
+    }
+
+    </script>
+
+  </div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <div class="footer">
+  </div>
+</div>
+
+</body>
+</html>
