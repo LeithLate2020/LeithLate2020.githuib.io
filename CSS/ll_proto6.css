@@ -1,6 +1,6 @@
 @font-face {
 font-family: "Futura";
-src: url("https://leithlate2020.github.io/Fonts/futura-pt-book.otf") format("opentype");
+src: url("../Fonts/futura-pt-book.otf") format("opentype");
 }
 
 body {
@@ -24,7 +24,7 @@ body {
   height: 558px;
   //position: absolute;
   //right: 0;
-  background-color: lightgray;
+  background-color: white;
   //font-family: "Arial", Arial, serif;
   padding: 0px;
   margin-left: 462px;
