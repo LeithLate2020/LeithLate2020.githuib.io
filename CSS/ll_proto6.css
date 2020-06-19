@@ -1,50 +1,76 @@
 @font-face {
-font-family: "Futura";
-src: url("../Fonts/futura-pt-book.otf") format("opentype");
+  font-family: "Futura";
+  src: url("https://leithlate2020.github.io/Fonts/futura-pt-book.otf") format("opentype");
 }
 
 body {
   font-family: "Futura", sans-serif;
-    font-size: 16px;
+  font-size: 16px;
+}
+
+.intro {
+  margin: auto;
+  text-align: center;
+}
+
+.logo_container {
+    width:100%;
+    text-align:center;
+}
+
+.logo_left {
+  float: left;
+  width:100px;
+}
+
+.logo_text {
+  display: inline-block;
+  margin:0 auto;
+}
+
+.logo_right {
+  float: right;
+  width:280px;
+}
+
+.logo_left img {
+  height: 80px;
+}
+
+.logo_right img {
+  height: 80px;
 }
 
 #mapid {
-  //width: 70%;
   width: 462px;
   height: 558px;
-  //width:100vh;
-  //height:100vh;
   float: left;
-      z-index: 1;
-         position: relative;
+  z-index: 1;
+  position: relative;
 }
 
 .sidebar {
-  //width: 300px;
   height: 558px;
-  //position: absolute;
-  //right: 0;
   background-color: white;
-  //font-family: "Arial", Arial, serif;
   padding: 0px;
   margin-left: 462px;
 }
 
 .name {
-    padding: 10px;
+  padding: 10px;
 }
 
 .text {
-    padding: 10px;
+  padding: 10px;
 }
 
 .media {
-    padding: 10px;
-      height: 120px;
+  padding: 10px;
+  height: 120px;
 }
 
 .artists {
-    padding: 10px;
+  padding: 10px;
 }
 
 .toggle{
@@ -60,17 +86,25 @@ body {
 }
 
 img.artist {
-  //float: left;
   width: 50px;
   padding-right: 5px;
   padding-bottom: 5px;
-    padding-top: 5px;
+   padding-top: 5px;
 }
 
 .artist_name {
   display: inline-block;
   padding: 10px;
   vertical-align: middle;
+}
+
+.artist_balloons {
+  width: 60px;
+  height: 120px;
+  float: left;
+  margin-left: -60px;
+  z-index: 2;
+  position: relative;
 }
 
 .content {
@@ -81,9 +115,10 @@ audio {
   height: 25px;
   width: 250px;
   padding-top: 10px;
-  //padding-left: 10px;
+  padding-left: 10px;
 }
 
+/*overriding Leaflet CSS*/
 .custom-popup .leaflet-popup-content-wrapper {
   background:#2c3e50;
   color:#fff;
@@ -99,85 +134,25 @@ audio {
   }
 .custom-popup .leaflet-popup-tip {
     background:#2c3e50;
-  //border-left:15px solid transparent;
-  //border-right:15px solid transparent;
-  //border-top:15px solid #2c3e50;
   }
 
-.jumbotron{
+/*overriding Bootstrap CSS*/
+.jumbotron {
     padding-top: 10px;
     padding-bottom: 50px;
     margin-bottom: 0px;
     margin-top: 0px;
     background-color: white;
-  }
+}
 
-  .h1, .h2, .h3, h1, h2, h3 {
+.jumbotron p {
+  font-size: 16px;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 
-//@media (max-width: 576px) {
-//  html, body, #mapid {
-//    height: 100%;
-//    width: 100vw;
-//  } 
-//}
 
-.intro {
-  margin: auto;
-  text-align: center;
-}
-
-.logo_container {
-    width:100%;
-    text-align:center;
-}
-
-.logo_left {
-  float: left;
-  //padding: 5px;
-  //height: 100px;
-  width:100px;
-}
-
-.logo_text {
-    display: inline-block;
-    margin:0 auto;
-  //width:100px;
-}
-
-.logo_right {
-  float: right;
-  //padding: 5px;
-  //height: 50px;
-      width:280px;
-}
-
-.logo_left img{
-  //padding: 5px;
-  height: 80px;
-   //   width:100px;
-}
-
-.logo_right img{
-  //padding: 5px;
-  height: 80px;
-   //   width:100px;
-}
-
-.jumbotron p{
-  font-size: 16px;
-  }
-
-.artist_balloons {
-  //width: 70%;
-  width: 60px;
-  height: 120px;
-  float: left;
-  //background-color: black;
-  margin-left: -60px;
-  z-index: 2;
-    position: relative;
-}
